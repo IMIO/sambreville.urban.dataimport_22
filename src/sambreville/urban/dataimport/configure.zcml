@@ -1,0 +1,47 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="sambreville.urban.dataimport">
+
+    <i18n:registerTranslations directory="locales" />
+
+    <!-- Zope2 initialization -->
+    <five:registerPackage package="." initialize=".initialize" />
+
+    <!-- Include configuration for dependencies listed in setup.py -->
+    <includeDependencies package="." />
+    <includeDependencies package=".csv" />
+
+    <!-- Register the installation GenericSetup extension profile -->
+    <genericsetup:registerProfile
+        name="default"
+        title="sambreville.urban.dataimport"
+        directory="profiles/default"
+        description="Extension profile for sambreville.urban.dataimport."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+    <genericsetup:importStep
+        name="sambreville.urban.dataimport-postInstall"
+        title="sambreville.urban.dataimport post_install import step"
+        description="Post install import step from sambreville.urban.dataimport"
+        handler=".setuphandlers.post_install">
+    </genericsetup:importStep>
+
+    <browser:page
+        name="dataimport-controlpanel"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".settings.SambrevilleImporterSettings"
+        permission="zope2.View"
+    />
+
+    <adapter
+        for="sambreville.urban.dataimport.settings.SambrevilleImporterSettingsForm"
+        factory=".settings.SambrevilleImporterFromImportSettings"
+        provides="imio.urban.dataimport.csv.interfaces.ICSVImporter"
+    />
+
+</configure>
