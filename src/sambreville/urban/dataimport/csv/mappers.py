@@ -3,7 +3,7 @@ import unicodedata
 
 import datetime
 
-from tournai.urban.dataimport.csv.utils import get_state_from_licences_dates, get_date_from_licences_dates, \
+from sambreville.urban.dataimport.csv.utils import get_state_from_licences_dates, get_date_from_licences_dates, \
     load_architects, load_geometers, load_notaries, load_parcellings, get_state_from_raw_conclusion, \
     get_decision_from_raw_conclusion, get_custom_event, convertToUnicode, get_point_and_digits, convertToAscii, \
     delete_csv_report_files, path_insensitive, create_notary_letters

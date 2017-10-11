@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from tournai.urban.dataimport.csv.mappers import *
+from sambreville.urban.dataimport.csv.mappers import *
 from imio.urban.dataimport.mapper import SimpleMapper
 
 OBJECTS_NESTING = [

@@ -15,17 +15,17 @@ class CSVImporterSettings(ImporterSettings):
     """
 
 
-class TournaiCsvImporterFromImportSettings(CSVImporterFromImportSettings):
+class SambrevilleCsvImporterFromImportSettings(CSVImporterFromImportSettings):
     """ """
 
     def get_importer_settings(self):
         """
         Return the db name to read.
         """
-        settings = super(TournaiCsvImporterFromImportSettings, self).get_importer_settings()
+        settings = super(SambrevilleCsvImporterFromImportSettings, self).get_importer_settings()
         db_settings = {
             'key_column': 'id',
-            'csv_filename': 'tournai_20170317',
+            'csv_filename': 'export1',
         }
 
         settings.update(db_settings)

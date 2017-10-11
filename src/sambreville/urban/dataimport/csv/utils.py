@@ -12,7 +12,7 @@ from imio.urban.dataimport.config import IMPORT_FOLDER_PATH
 from imio.urban.dataimport.errors import NoPortalTypeError, IdentifierError
 from imio.urban.dataimport.utils import identify_parcel_abbreviations, parse_cadastral_reference, CadastralReference, \
     guess_cadastral_reference
-from tournai.urban.dataimport.csv import valuesmapping
+from sambreville.urban.dataimport.csv import valuesmapping
 
 cpt_nl = 0
 cptFound_nl = 0

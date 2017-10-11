@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from tournai.urban.dataimport.csv import objectsmapping
-from tournai.urban.dataimport.csv import valuesmapping
+from sambreville.urban.dataimport.csv import objectsmapping
+from sambreville.urban.dataimport.csv import valuesmapping
 from imio.urban.dataimport.config import IMPORT_FOLDER_PATH
 from imio.urban.dataimport.csv.importer import CSVImportSource, CSVDataExtractor, CSVDataImporter
 from imio.urban.dataimport.csv.interfaces import ICSVImportSource, ICSVImporter
@@ -12,7 +12,7 @@ import csv
 from imio.urban.dataimport.mapping import ObjectsMapping, ValuesMapping
 
 
-class TournaiCSVMapping(ObjectsMapping):
+class SambrevilleCSVMapping(ObjectsMapping):
     """ """
 
     def getObjectsNesting(self):
@@ -22,7 +22,7 @@ class TournaiCSVMapping(ObjectsMapping):
         return objectsmapping.FIELDS_MAPPINGS
 
 
-class TournaiCSVValuesMapping(ValuesMapping):
+class SambrevilleCSVValuesMapping(ValuesMapping):
     """ """
 
     def getValueMapping(self, mapping_name):
